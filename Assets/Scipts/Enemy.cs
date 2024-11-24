@@ -1,0 +1,73 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+public class Enemy : MonoBehaviour
+{
+    public NavMeshAgent agent;
+    public Animator anim;
+    private bool isDead = false;
+    public Transform player;
+    private float delay = 3;
+    private int vida = 4;
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponent<Animator>();
+        
+
+    }
+
+
+    void Update()
+    {
+        if (isDead == false)
+        {
+            SetDestination(player.position);
+        }
+    }
+
+    public void SetDestination(Vector3 newdestination)
+    {
+        agent.destination = newdestination;
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(collision.gameObject);
+            vida--;
+
+            if (vida <= 0)
+            {
+
+                TriggerDeath();
+            }
+        }
+
+
+
+    }
+    private IEnumerator Muelto(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
+    private void TriggerDeath()
+    {
+
+        agent.enabled = false;
+        isDead = true;
+
+       
+        anim.SetBool("Muelto", true);
+
+
+        StartCoroutine(Muelto(delay));
+    }
+
+   
+}
