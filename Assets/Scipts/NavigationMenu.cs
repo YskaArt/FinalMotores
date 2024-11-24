@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NavigationMenu : MonoBehaviour
 {
-    [SerializeField] private int NivelActual;
+    public int NivelActual;
 
     public void PlayGame()
     {
@@ -15,6 +15,7 @@ public class NavigationMenu : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     

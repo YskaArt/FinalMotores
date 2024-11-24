@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1628821866317611024}
   - component: {fileID: 3392767702469672837}
   - component: {fileID: 3179676409969291213}
+  - component: {fileID: -4288986223102192602}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Bullet
@@ -133,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4288986223102192602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2826215612253874361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27280203c00f10246827fa3bd1d294dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TempoForDestroy: 10
