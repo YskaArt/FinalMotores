@@ -13,6 +13,7 @@ public class Level1Activate : MonoBehaviour
     public GameObject EnemyText;
     private int totalEnemies;
     private int remainingEnemies;
+    public Animator DoorLevel1;
 
     private void Start()
     {
@@ -59,6 +60,7 @@ public class Level1Activate : MonoBehaviour
         if (remainingEnemies <= 0)
         {
             Debug.Log("Todos los enemigos han sido derrotados!");
+            DoorLevel1.SetBool("OpenDoor", true);
         }
     }
 

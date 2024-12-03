@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
 
             if (vida <= 0)
             {
-
+                anim.SetBool("Muelto", true);
                 TriggerDeath();
             }
         }
@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
         isDead = true;
         
 
-        anim.SetBool("Muelto", true);
+        
         
 
         StartCoroutine(Muelto(delay));

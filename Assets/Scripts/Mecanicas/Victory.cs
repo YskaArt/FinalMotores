@@ -5,40 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Victory : MonoBehaviour
 {
-    [SerializeField] private float checkInterval = 1f;
+   
     public NavigationMenu menu;
-    private float timer = 0f;
 
-    void Update()
+
+
+    private void OnTriggerEnter(Collider other)
     {
-        
-        timer += Time.deltaTime;
-
-        // Chequea a intervalos definidos
-        if (timer >= checkInterval)
+        if(other.CompareTag("Player"))
         {
-            timer = 0f; // Reinicia el temporizador
-            CheckForEnemies();
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Debug.Log("Cargando la pantalla de victoria...");
+            SceneManager.LoadScene(menu.NivelActual + 1);
         }
     }
-
-    void CheckForEnemies()
-    {
-        
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        // Si no hay enemigos, cambia a la pantalla de victoria
-        if (enemies.Length == 0)
-        {
-            LoadVictoryScene();
-        }
-    }
-
-    void LoadVictoryScene()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-        Debug.Log("No hay enemigos. Cargando la pantalla de victoria...");
-        SceneManager.LoadScene(menu.NivelActual + 1);
-    }
+    
 }
