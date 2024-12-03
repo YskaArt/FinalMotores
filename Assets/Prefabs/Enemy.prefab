@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1f7f945169c3d934fb641af59f9784b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.34584498
+      value: 64.70581
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f7f945169c3d934fb641af59f9784b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0973899
+      value: 1.7704148
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f7f945169c3d934fb641af59f9784b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.61
+      value: -7.4910326
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f7f945169c3d934fb641af59f9784b9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -129,6 +129,7 @@ MonoBehaviour:
   agent: {fileID: 7079439133691063565}
   anim: {fileID: 354678929844280932}
   player: {fileID: 0}
+  ContardorEnemies: {fileID: 0}
 --- !u!136 &6502563947633950458
 CapsuleCollider:
   m_ObjectHideFlags: 0
