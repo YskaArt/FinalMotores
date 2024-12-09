@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TempoForDestroy: 10
+  bloodParticlesPrefab: {fileID: 7001473614636891676, guid: 9d5c51f304c8a7743a1c56d8d59f0933, type: 3}
 --- !u!1001 &4714601257659700377
 PrefabInstance:
   m_ObjectHideFlags: 0
